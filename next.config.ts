@@ -1,18 +1,17 @@
-
 // next.config.ts
-import withPWA from 'next-pwa'
+import withPWA from '@ducanh2912/next-pwa';
 
-const isDev = process.env.NODE_ENV === 'development'
 
+const isDev = process.env.NODE_ENV === 'development';
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-
-}
+  // Your Next.js config if you have any
+};
 
 export default withPWA({
   dest: 'public',
-  disable: isDev, // disable PWA in development
+  disable: isDev,
   register: true,
-  skipWaiting: true,
   sw: 'sw.js',
-  ...nextConfig
-})
+})(nextConfig);
